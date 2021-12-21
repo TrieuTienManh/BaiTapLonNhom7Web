@@ -1,0 +1,52 @@
+.NavBar{
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+}
+.logo{
+  width: 100px;
+  height: 46px;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+.HomeIcon1{
+    padding-top: 10px;
+    font-size: 25px;
+}
+.HomeChu{
+    padding-top: 4px;
+    font-size: 14px;
+}
+.HomeIcon2{
+    font-size: 12px;
+    padding-top: 10px;
+}
+.SearchBT{
+    background-color: rgb(237, 237, 241);
+}
+.SearchIP{
+    background-color: rgb(237, 237, 241);
+    border: 0;
+}
+.Search{
+    padding: 3px;
+    padding-top: 4px;
+}
+.icon1{
+    height: 40px;
+    padding-top: 4px;
+}
+.popular{
+    font-size: 20px;
+    color: #000;
+    padding-top: 7px;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.abc{
+    border-left: 1px solid rgb(182, 165, 165);
+    padding-left: 13px;
+}
+.Story{
+    padding-top: 7px;
+    justify-content: space-between;
+}
