@@ -1,56 +1,206 @@
 /* đây là vùng style dùng cho máy tính */
-.NavBar{
-    background-color: rgb(255, 255, 255);
-    justify-content: space-between;
+.NavBar {
+  background-color: rgb(255, 255, 255);
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
-.logo{
+.VungMain{
+  padding-top: 55px;
+}
+.logo {
   width: 100px;
   height: 46px;
   padding-top: 4px;
   padding-left: 4px;
 }
-.HomeIcon1{
-    padding-top: 10px;
-    font-size: 25px;
+.HomeIcon1 {
+  padding-top: 10px;
+  font-size: 25px;
 }
-.HomeChu{
-    padding-top: 4px;
-    font-size: 14px;
+.HomeChu {
+  padding-top: 4px;
+  font-size: 14px;
 }
-.HomeIcon2{
-    font-size: 12px;
-    padding-top: 10px;
+.HomeIcon2 {
+  font-size: 12px;
+  padding-top: 10px;
 }
-.SearchBT{
-    background-color: rgb(237, 237, 241);
+.SearchBT {
+  background-color: rgb(237, 237, 241);
 }
-.SearchIP{
-    background-color: rgb(237, 237, 241);
-    border: 0;
+.SearchIP {
+  background-color: rgb(237, 237, 241);
+  border: 0;
 }
-.Search{
-    padding: 3px;
-    padding-top: 4px;
+.Search {
+  padding: 3px;
+  padding-top: 4px;
 }
-.icon1{
-    height: 40px;
-    padding-top: 4px;
+.icon1 {
+  height: 40px;
+  padding-top: 4px;
 }
-.popular{
-    font-size: 20px;
-    color: #000;
-    padding-top: 7px;
+.popular {
+  font-size: 20px;
+  color: #000;
+  padding-top: 7px;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+.DacBiet {
+  padding-left: 0;
+}
+.abc {
+  border-left: 1px solid rgb(182, 165, 165);
+  padding-left: 13px;
+}
+.Story {
+  padding-top: 7px;
+  justify-content: space-between;
+}
+
+.TimKiemChoHome {
+  border: 1px solid rgb(26, 89, 224);
+}
+.ChuMo {
+  font-size: 10px;
+}
+.itemH {
+  align-items: center;
+}
+.ToanBoVeMotKieu {
+  font-size: 20px;
+}
+.ChuItem {
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.VungMain {
+  background-color: rgb(224, 230, 235);
+}
+.ChucNangThanhPost {
+  font-size: 20px;
+  padding-left: 15px;
+  color: #000;
+}
+.InputThanhPost {
+  border: 0;
+  background-color: rgb(235, 239, 243);
+}
+.AvatarThanhPost {
+  font-size: 22px;
+  padding-right: 15px;
+}
+.FormThanhDuoiPost {
+  justify-content: space-between;
+}
+.DuoiPostTrai button {
+  border: 0;
+  background-color: rgb(252, 252, 252);
+}
+.BenTraiBaiDang {
+  background-color: rgb(240, 239, 239);
+}
+
+.TuongTacBaiDangOK button {
+  border: 0;
+  background-color: rgb(252, 252, 252);
+}
+.AnhBaiDang img {
+  width: 150px;
+  height: 100px;
+  border: 1px solid rgb(42, 98, 145);
+}
+.MainPhuPhan11 {
+  font-size: 16px;
+  color: azure;
+  width: 100%;
+  height: 80px;
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-3d-technology-business-background-illustration-image_187897.jpg);
+}
+.BieuTuongBaoVe{
+  font-size: 25px;
+  color: crimson;
+}
+
+.TenTopGrowing{
+    border-bottom: 1px solid rgb(196, 196, 196);
     justify-content: space-between;
-    padding-left: 10px;
+
 }
-.abc{
-    border-left: 1px solid rgb(182, 165, 165);
-    padding-left: 13px;
+
+.ChuGiDay{
+  font-size: 13px;
+  color: rgb(0, 0, 0);
 }
-.Story{
-    padding-top: 7px;
-    justify-content: space-between;
+.ChuGiDay2{
+  font-size: 13px;
+  color:rgb(46, 101, 138)
 }
-.thanhthanh{
-    
+.ChuGiDay3{
+  /* không thay đổi màu chữ */
+  font-size: 13px;
+}
+.ChuGiDay4{
+  font-size: 15px;
+}
+.ChuGiDay5{
+  /* chỉ thay đổi màu chữ */
+  color: blue;
+}
+.AnhUser{
+  width: 80px;
+  height: 80px;
+}
+.AnhUser2{
+  width: 82px;
+  height: 82px;
+}
+
+
+/* Phần style cho mobile và tablet */
+
+/* mobile width < 740px */
+@media only screen and (max-width: 48.1875em){
+  .anmobile{
+    display: none;
+  }
+  .antabletvamobile{
+    display: none;
+  }
+  .tatpd{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+}
+
+
+/* tablet width >= 740px  <1024px*/
+@media only screen and (min-width: 48.1875em) and (max-width: 63.9375em){
+  .antabletvamobile{
+    display: none;
+  }
+  .tatpd{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+/* phần thiết kế có liên quan đến js */
+#nutthich{
+  border: 0px;
+}
+#nutkhongthich{
+  border: 0px;
+}
+
+#thich{
+  color: black;
+}
+#khongthich{
+  color: black;
 }
