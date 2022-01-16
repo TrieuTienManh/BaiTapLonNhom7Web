@@ -454,8 +454,15 @@
                                     <div class="col-md-11 bg-light">
                                         <div class="d-flex">
                                             <div class="col-md-1 pt-2">                                       
-                                                <button id="nutthich" onclick="procVote()"><i class="bi bi-caret-up" id="thich"></i></button>
-                                                <div id="votes">Votes</div>
+                                                <button id="nutthich"><i class="bi bi-caret-up" id="thich"></i></button>
+                                                <?php
+                                                    // // Bước 02: Thực hiện truy vấn
+                                                    // $sqlh9 = "SELECT SUM(Thich) As 'SoLuong' FROM tb_thich WHERE MaBaiViet = {$row['MaBaiViet']} ";
+                                                    // $result9 = mysqli_query($conn,$sqlh9);
+                                                    // echo "{$row['MaBaiViet']}";
+                                                    // $row9 = mysqli_fetch_assoc($result9);
+                                                ?>
+                                                <div id="votes"><?php // echo $row9['SoLuong']; ?></div>
                                                 <button id="nutkhongthich"><i class="bi bi-caret-down" id="khongthich"></i></button>
                                             </div>
                                             <div class="col-md-11 BenPhaiBaiDang">
@@ -656,6 +663,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <Script src="js/procVote.js"></Script>
     <script src="//code.jquery.com/jquery-3.2.0.slim.min.js"></script>
     <script src="toggle-onoff.js"></script>
 
