@@ -57,14 +57,14 @@ include("template/Navbar.php");
                         </div>
 
                         <!-- Vùng này là Dữ liệu cần lặp lại hiển thị từ CSDL -->
-                        <?php
+                            <?php
                                 // Bước 01: Kết nối Database Server
                                 $conn = mysqli_connect('localhost','root','','db_qlreddit');
                                 if(!$conn){
                                     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
                                 }
                                 // Bước 02: Thực hiện truy vấn
-                                $sqlh = "SELECT nd.TenNguoiDung, bv.TieuDe, bv.NoiDung, bv.AnhBaiViet FROM tb_baiviet bv, tb_ttnguoidung nd, tb_taikhoan tk  WHERE nd.MaNguoiDung = bv.MaNguoiDung AND nd.MaNguoiDung = tk.MaNguoiDung AND (tk.Email=  '{$_SESSION['isloginok']}' OR tk.TenDangNhap =  '{$_SESSION['isloginok']}')";
+                                $sqlh = "SELECT nd.TenNguoiDung, bv.TieuDe, bv.NoiDung, bv.AnhBaiViet, bv.MaBaiViet FROM tb_baiviet bv, tb_ttnguoidung nd, tb_taikhoan tk WHERE nd.MaNguoiDung = bv.MaNguoiDung And  tk.MaNguoiDung = bv.MaNguoiDung AND (tk.Email=  '{$_SESSION['isloginok']}' OR tk.TenDangNhap =  '{$_SESSION['isloginok']}')";
                                 $resulth = mysqli_query($conn,$sqlh);
                                 // Bước 03: Xử lý kết quả truy vấn
                                 if(mysqli_num_rows($resulth) > 0){
@@ -76,7 +76,14 @@ include("template/Navbar.php");
                                         <div class="d-flex">
                                             <div class="col-md-1 pt-2">                                       
                                                 <button id="nutthich" onclick="procVote()"><i class="bi bi-caret-up" id="thich"></i></button>
-                                                <div id="votes">Votes</div>
+                                                <?php
+                                                    // // Bước 02: Thực hiện truy vấn
+                                                    // $sqlh9 = "SELECT SUM(Thich) As 'SoLuong' FROM tb_thich WHERE MaBaiViet = {$row['MaBaiViet']} ";
+                                                    // $result9 = mysqli_query($conn,$sqlh9);
+                                                    // echo "{$row['MaBaiViet']}";
+                                                    // $row9 = mysqli_fetch_assoc($result9);
+                                                ?>
+                                                <div id="votes"> votes</div> <?php //echo $row9['SoLuong']; ?>
                                                 <button id="nutkhongthich"><i class="bi bi-caret-down" id="khongthich"></i></button>
                                             </div>
                                             <div class="col-md-11 BenPhaiBaiDang">
@@ -110,7 +117,15 @@ include("template/Navbar.php");
                                                                             <i class="bi bi-box-arrow-down pe-1"></i>
                                                                             <div> Save </div>
                                                                         </button>
-                                                                        <button><i class="bi bi-three-dots ps-3"></i></button>
+                                                                        <div class="dropdown">
+                                                                        <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                            <i class="bi bi-three-dots ps-3 chuden"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                                            <li><a href="process_delete.php?id=<?php echo $row['MaBaiViet']; ?>"><button class="dropdown-item" type="button">Delete</button></a></li>
+                                                                            <li><a href="UpdatePost.php?id=<?php echo $row['MaBaiViet']; ?>"><button class="dropdown-item" type="button">Update</button></a></li>
+                                                                        </ul>
+                                                                        </div>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -176,9 +191,9 @@ include("template/Navbar.php");
                                                     <div class="col-md-6">Cake day</div>
                                                 </div>
                                         </div>
-                                        <div class="col-md-12 d-grid gap-2 pt-2">
+                                        <a class="col-md-12 d-grid gap-2 pt-2" href="Post.php">
                                             <button class="btn btn-primary rounded-pill fw-bold" type="button"> New Post</button>
-                                        </div>
+                                        </a>
                                         <div class="col-md-12">
                                             <div class="col-md-12 pt-2"><a class="text-decoration-none link-primary fw-light fw-bold" href="" id="more1"></a></div>
                                             <div class="col-md-12 pt-2"><a class="text-decoration-none link-primary fw-light fw-bold" href="" id="more2"></a></div>
